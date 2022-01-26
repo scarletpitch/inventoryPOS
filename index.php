@@ -1,10 +1,26 @@
+<?php
+
+include_once 'connectdb.php';
+session_start();
+
+if(isset($_POST['btn_login'])) {
+
+    $user_email = $_POST['txt_email'];
+    $password = $_POST['txt_password'];
+
+    echo $user_email." - ".$password;
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html>
 
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>AdminLTE 2 | Log in</title>
+    <title>POS | Log in</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.7 -->
@@ -38,28 +54,27 @@
         <div class="login-box-body">
             <p class="login-box-msg">Sign in to start your session</p>
 
-            <form action="../../index2.html" method="post">
+            <form action="" method="post">
                 <div class="form-group has-feedback">
-                    <input type="email" class="form-control" placeholder="Email">
+                    <input type="email" class="form-control" placeholder="Email" name="txt_email">
                     <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
                 </div>
                 <div class="form-group has-feedback">
-                    <input type="password" class="form-control" placeholder="Password">
+                    <input type="password" class="form-control" placeholder="Password" name="txt_password">
                     <span class="glyphicon glyphicon-lock form-control-feedback"></span>
                 </div>
                 <div class="row">
                     <div class="col-xs-8">
-
+                        <a href="#">I forgot my password</a><br>
                     </div>
                     <!-- /.col -->
                     <div class="col-xs-4">
-                        <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
+                        <button type="submit" class="btn btn-primary btn-block btn-flat" name="btn_login">Log In</button>
                     </div>
                     <!-- /.col -->
                 </div>
             </form>
 
-            <a href="#">I forgot my password</a><br>
 
         </div>
         <!-- /.login-box-body -->
