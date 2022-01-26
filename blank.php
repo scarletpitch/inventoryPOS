@@ -1,3 +1,9 @@
+//
+//
+// USE THIS CODE AS A TEMPLATE FOR NEW FILE
+//
+//
+
 <?php include_once 'header.php'; ?>
 
 <!-- Content Wrapper. Contains page content -->
