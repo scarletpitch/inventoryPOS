@@ -8,9 +8,9 @@ if(isset($_POST['btn_login'])) {
     $user_email = $_POST['txt_email'];
     $password = $_POST['txt_password'];
 
-    //echo $user_email." - ".$password;
+    // echo $user_email." - ".$password;
 
-    $select = $pdo->prepare("select * from table_user where user_email = '$user_email' AND password = '$password'");
+    $select = $pdo->prepare("select * from pos_db.table_user where user_email = '$user_email' AND password = '$password'");
 
     $select->execute();
 
@@ -19,7 +19,7 @@ if(isset($_POST['btn_login'])) {
     // var_dump($user_email, $password);
 
     if ($row['user_email'] == $user_email AND $row['password'] == $password) {
-        echo $success = 'Sign in successfull';
+        echo $success = 'Sign in successfully';
 
         header('refresh:1;dashboard.php');
 
